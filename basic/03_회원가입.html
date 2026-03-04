@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <!-- 1. 이름 `input:text`
+2. 이메일 `input:email`
+3. 생년월일 `input:date`
+4. 성별 `input:radio`
+5. 관심분야 `input:checkbox`
+6. 거주지역 `select`
+7. 가입동기 `textarea` 
+8. 초기화버튼, 가입하기버튼-->
+
+    <!-- 입력영역 -->
+    <form action="/server" method="get">
+      <div>
+        <div>
+          <label for="name">이름:</label
+          ><input type="text" name="name" id="name" required />
+        </div>
+        <div>
+          <label for="email">이메일:</label
+          ><input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="example.naver.com"
+          />
+        </div>
+        <div>
+          <label for="pwd">비밀번호:</label
+          ><input type="password" name="pwd" id="pwd" />
+        </div>
+        <div>
+          <label for="birth">생년월일:</label
+          ><input type="date" name="birth" id="birth" />
+        </div>
+        <div>
+          <span>관심분야:</span
+          ><input type="checkbox" name="interests" id="ai" value="ai" /><label
+            for="ai"
+            >AI</label
+          ><input
+            type="checkbox"
+            name="interests"
+            id="data"
+            value="data"
+          /><label for="data">DATA</label
+          ><input type="checkbox" name="interests" id="app" value="app" /><label
+            for="app"
+            >APP</label
+          >
+        </div>
+        <div>
+          <span>성별:</span
+          ><input type="radio" name="gender" id="male" value="male" /><label
+            for="male"
+            >남</label
+          ><input type="radio" name="gender" id="female" value="female" /><label
+            for="female"
+            >여</label
+          >
+        </div>
+        <div>
+          <label for="region">거주지역:</label
+          ><select name="region" id="region">
+            <option value="">-선택-</option>
+            <option value="seoul">서울</option>
+            <option value="gg">경기</option>
+          </select>
+        </div>
+        <div>
+          <label for="intoduce">가입인사:</label
+          ><textarea name="intoduce" id="intoduce"></textarea>
+        </div>
+      </div>
+      <!-- 버튼영역 -->
+      <div>
+        <button type="reset">초기화</button
+        ><button type="submit">전송하기</button>
+      </div>
+    </form>
+  </body>
+</html>
