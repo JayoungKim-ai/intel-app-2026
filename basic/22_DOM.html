@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .on {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="likeBtn">
+      <span id="heart">🤍</span> <span id="likeCount">0</span>
+    </button>
+    <script>
+      const likeBtn = document.getElementById("likeBtn");
+      const likeCount = document.getElementById("likeCount");
+      const heart = document.getElementById("heart");
+
+      likeBtn.addEventListener("click", () => {
+        likeBtn.classList.toggle("on");
+        if (likeBtn.classList.contains("on")) {
+          ++likeCount.textContent;
+          heart.textContent = "♥️";
+        } else {
+          --likeCount.textContent;
+          heart.textContent = "🤍";
+        }
+      });
+    </script>
+  </body>
+</html>
