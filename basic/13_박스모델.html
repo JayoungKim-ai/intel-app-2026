@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스모델</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .business-card {
+        box-sizing: border-box;
+        width: 300px;
+        height: 150px;
+        padding: 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+      .business-card:hover {
+        box-shadow: 5px 5px gray;
+        background-color: lightcyan;
+      }
+      .name {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .job {
+        color: #777;
+      }
+      .box {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="business-card">
+        <div class="box name">김코딩</div>
+        <div class="box job">Frontend Developer</div>
+        <div class="box email">codeing@example.com</div>
+        <div class="box phone">010-1234-5678</div>
+      </div>
+      <div class="business-card">
+        <div class="box name">김코딩</div>
+        <div class="box job">Frontend Developer</div>
+        <div class="box email">codeing@example.com</div>
+        <div class="box phone">010-1234-5678</div>
+      </div>
+      <div class="business-card">
+        <div class="box name">김코딩</div>
+        <div class="box job">Frontend Developer</div>
+        <div class="box email">codeing@example.com</div>
+        <div class="box phone">010-1234-5678</div>
+      </div>
+      <div class="business-card">
+        <div class="box name">김코딩</div>
+        <div class="box job">Frontend Developer</div>
+        <div class="box email">codeing@example.com</div>
+        <div class="box phone">010-1234-5678</div>
+      </div>
+    </div>
+  </body>
+</html>

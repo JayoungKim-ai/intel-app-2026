@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap");
+
+h1 {
+  font-size: 12px;
+  font-family: "Black Han Sans", sans-serif;
+}
+
+.red {
+  background-color: red;
+}
+
+.hello {
+  text-decoration: underline;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+
+.css {
+  font-style: italic;
+}

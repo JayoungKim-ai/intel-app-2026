@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1>회원가입</h1>
+    <h1 class="text-2xl font-bold p-4">회원가입</h1>
     <!-- 1. 이름 `input:text`
 2. 이메일 `input:email`
 3. 생년월일 `input:date`
@@ -19,12 +20,12 @@
     <!-- 입력영역 -->
     <form action="/server" method="get">
       <div>
-        <div>
-          <label for="name">이름:</label
+        <div class="bg-gray-100 p-2">
+          <label for="name" class="inline-block w-20">이름:</label
           ><input type="text" name="name" id="name" required />
         </div>
-        <div>
-          <label for="email">이메일:</label
+        <div class="bg-gray-100 p-2">
+          <label for="email" class="inline-block w-20">이메일:</label
           ><input
             type="email"
             name="email"
@@ -33,16 +34,16 @@
             placeholder="example.naver.com"
           />
         </div>
-        <div>
-          <label for="pwd">비밀번호:</label
+        <div class="bg-gray-100 p-2">
+          <label for="pwd" class="inline-block w-20">비밀번호:</label
           ><input type="password" name="pwd" id="pwd" />
         </div>
-        <div>
-          <label for="birth">생년월일:</label
+        <div class="bg-gray-100 p-2">
+          <label for="birth" class="inline-block w-20">생년월일:</label
           ><input type="date" name="birth" id="birth" />
         </div>
-        <div>
-          <span>관심분야:</span
+        <div class="bg-gray-100 p-2">
+          <span class="inline-block w-20">관심분야:</span
           ><input type="checkbox" name="interests" id="ai" value="ai" /><label
             for="ai"
             >AI</label
@@ -57,8 +58,8 @@
             >APP</label
           >
         </div>
-        <div>
-          <span>성별:</span
+        <div class="bg-gray-100 p-2">
+          <span class="inline-block w-20">성별:</span
           ><input type="radio" name="gender" id="male" value="male" /><label
             for="male"
             >남</label
@@ -67,23 +68,32 @@
             >여</label
           >
         </div>
-        <div>
-          <label for="region">거주지역:</label
+        <div class="bg-gray-100 p-2">
+          <label for="region" class="inline-block w-20">거주지역:</label
           ><select name="region" id="region">
             <option value="">-선택-</option>
             <option value="seoul">서울</option>
             <option value="gg">경기</option>
           </select>
         </div>
-        <div>
-          <label for="intoduce">가입인사:</label
+        <div class="bg-gray-100 p-2">
+          <label for="intoduce" class="inline-block w-20">가입인사:</label
           ><textarea name="intoduce" id="intoduce"></textarea>
         </div>
       </div>
       <!-- 버튼영역 -->
-      <div>
-        <button type="reset">초기화</button
-        ><button type="submit">전송하기</button>
+      <div class="p-10">
+        <button
+          type="reset"
+          class="bg-blue-700 p-1 px-2 mr-3 rounded-lg text-white"
+        >
+          초기화</button
+        ><button
+          type="submit "
+          class="bg-blue-700 p-1 px-2 mr-3 rounded-lg text-white"
+        >
+          전송하기
+        </button>
       </div>
     </form>
   </body>
