@@ -5,12 +5,13 @@ import Header from "./components/Header";
 import TeamPage from "./pages/TeamPage";
 import Footer from "./components/Footer";
 import Example from "./components/Example";
-import Like from "./components/Like";
+import Counter from "./components/Counter";
+import CafeMenu from "./components/CafeMenu";
 
 function App() {
   return (
     <>
-      <Like />
+      <CafeMenu />
     </>
   );
 }
