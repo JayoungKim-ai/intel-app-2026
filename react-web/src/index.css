@@ -1,0 +1,116 @@
+/* tailwindcss를 import하기 전에 폰트를 먼저 import 해야 합니다. */
+/* 다이나믹 서브셋을 사용하여 폰트 용량을 최소한으로 사용합니다. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+@import "tailwindcss";
+
+/* ── Theme 설정 ── */
+@theme {
+  /* 색상 */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-700: #1d4ed8;
+  --color-primary-900: #1e3a8a;
+  --color-accent: #f97316;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-danger: #ef4444;
+
+  /* 폰트 */
+  --font-sans: "Pretendard", "Noto Sans KR", sans-serif;
+
+  /* 폰트 크기 */
+  --text-heading-xl: 2.5rem;
+  --text-heading-lg: 2rem;
+  --text-heading-md: 1.5rem;
+  --text-body: 1rem;
+  --text-caption: 0.75rem;
+
+  /* 간격 */
+  --spacing-72: 18rem;
+  --spacing-84: 21rem;
+  --spacing-96: 24rem;
+  --spacing-128: 32rem;
+
+  /* 모서리 둥글기 */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* 그림자 */
+  --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-button: 0 2px 8px rgba(59, 130, 246, 0.4);
+
+  /* 브레이크포인트 (반응형 기준점) */
+  --breakpoint-sm: 640px; /* 큰 스마트폰, 작은 태블릿 */
+  --breakpoint-md: 768px; /* 일반 태블릿 (아이패드 등) */
+  --breakpoint-lg: 1024px; /* 노트북, 작은 데스크탑 */
+
+  /* 애니메이션 */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-pulse-slow: pulse-slow 3s infinite;
+}
+
+/* ── 키프레임 (theme 바깥에 선언) ── */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ── 글로벌 기본 스타일 ── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: #f9fafb;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  input {
+    outline: none;
+    border: 1px solid #7b8799;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    transition: border-color 0.2s;
+  }
+
+  input:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+
+  input::placeholder {
+    color: #9ca3af;
+  }
+}
