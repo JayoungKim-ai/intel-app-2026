@@ -7,11 +7,14 @@ import Footer from "./components/Footer";
 import Example from "./components/Example";
 import Counter from "./components/Counter";
 import CafeMenu from "./components/CafeMenu";
+import ExampleInput from "./components/ExampleInput";
+import NameCard from "./components/NameCard";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
     <>
-      <CafeMenu />
+      <TodoList />
     </>
   );
 }
