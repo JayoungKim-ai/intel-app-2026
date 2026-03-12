@@ -1,13 +1,14 @@
 import React from "react";
-import { Trash2 } from "lucide-react";
-import { useState } from "react";
 
-function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: "첫번째할일", completed: false },
-    { id: 2, text: "두번째할일", completed: true },
-    { id: 3, text: "세번째할일", completed: false },
-  ]);
+import { useState, useEffect } from "react";
+import TodoItem from "../components/TodoItem";
+
+function TodoPage() {
+  // 로컬스토리지에서 불러오기
+  const [todos, setTodos] = useState(() => {
+    const strTodos = localStorage.getItem("todos");
+    return strTodos ? JSON.parse(strTodos) : [];
+  });
 
   const [todoInput, setTodoInput] = useState("");
 
@@ -24,12 +25,18 @@ function TodoList() {
     );
     setTodos(newTodos);
   };
+
   // 삭제 ///////////////////////////////////////
   const handleDeletTodo = (id) => {
     console.log(id);
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
   };
+
+  // 로컬스토리지에 저장하기
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center py-20">
@@ -59,34 +66,12 @@ function TodoList() {
         {/* 할 일 목록 */}
         <ul className="max-h-[400px] overflow-y-auto pr-2">
           {todos.map((todo) => (
-            <li
+            <TodoItem
               key={todo.id}
-              className="flex items-center justify-between py-3 border-b border-gray-200"
-            >
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  defaultChecked={todo.completed}
-                  className="w-5 h-5"
-                  onChange={() => {
-                    handleCompleteToggle(todo.id);
-                  }}
-                />
-                <span
-                  className={`text-lg ${todo.completed && "text-gray-400 line-through"}`}
-                >
-                  {todo.text}
-                </span>
-              </label>
-              <button
-                className="text-red-500 hover:text-red-600 p-1"
-                onClick={() => {
-                  handleDeletTodo(todo.id);
-                }}
-              >
-                <Trash2 size={20} />
-              </button>
-            </li>
+              todo={todo}
+              handleCompleteToggle={handleCompleteToggle}
+              handleDeletTodo={handleDeletTodo}
+            />
           ))}
         </ul>
       </div>
@@ -94,4 +79,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default TodoPage;

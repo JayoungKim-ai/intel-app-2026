@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import UserCard from "./components/UserCard";
 import DesignSystemPage from "./pages/DesignSystemPage";
 import Header from "./components/Header";
@@ -9,12 +10,21 @@ import Counter from "./components/Counter";
 import CafeMenu from "./components/CafeMenu";
 import ExampleInput from "./components/ExampleInput";
 import NameCard from "./components/NameCard";
-import TodoList from "./components/TodoList";
+import TodoPage from "./pages/TodoPage";
+import ExamplePage from "./pages/ExamplePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
     <>
-      <TodoList />
+      <Header />
+      <Routes>
+        <Route path="/" element={<TeamPage />} />
+        <Route path="/todolist" element={<TodoPage />} />
+        <Route path="/example" element={<ExamplePage />} />
+        <Route path="/*" element={<NotFoundPage />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
