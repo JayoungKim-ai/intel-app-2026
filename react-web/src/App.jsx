@@ -13,6 +13,8 @@ import NameCard from "./components/NameCard";
 import TodoPage from "./pages/TodoPage";
 import ExamplePage from "./pages/ExamplePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Cat from "./components/Cat";
+import RandomAnimal from "./components/RandomAnimal";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/" element={<TeamPage />} />
         <Route path="/todolist" element={<TodoPage />} />
         <Route path="/example" element={<ExamplePage />} />
+        <Route path="/randomanimal" element={<RandomAnimal />} />
         <Route path="/*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
